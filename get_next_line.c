@@ -6,7 +6,7 @@
 /*   By: nzhuzhle <nzhuzhle@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 16:05:47 by nzhuzhle          #+#    #+#             */
-/*   Updated: 2023/06/15 18:15:31 by nzhuzhle         ###   ########.fr       */
+/*   Updated: 2023/06/15 22:13:32 by nzhuzhle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,6 @@ void	add_to_string(t_list *list, char *str, long lenth)
 	long	j;
 
 	i = 0;
-	if (!list)
-		return ;
 	while (i < lenth)
 	{
 		j = 0;
@@ -103,8 +101,7 @@ void	add_to_string(t_list *list, char *str, long lenth)
 			str[i++] = list->content[j++];
 		if (list->content[j] == '\n')
 			str[i++] = list->content[j];
-		else if (!list->content[j])
-			list = list -> next;
+		list = list -> next;
 	}
 	str[i] = '\0';
 }
